@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ASCII Art Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <h1 id="title">ASCII Art Generator</h1>
+      <select id="lang-switch">
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="en">🇬🇧 English</option>
+      </select>
+    </div>
+
+    <div id="drop-area">
+      <p id="drop-text">📥 Bild hierher ziehen, einfügen (CTRL+V) oder klicken zum Hochladen</p>
+      <input type="file" id="fileElem" accept="image/*" />
+    </div>
+
+    <div class="options">
+      <label id="label-width">Breite:
+        <input type="range" id="width" min="40" max="200" value="100" />
+      </label>
+
+      <label id="label-charset">Zeichensatz:
+        <select id="charset">
+          <option value=" .:-=+*#%@">Standard</option>
+          <option value=" ░▒▓█">Block</option>
+          <option value="01">Binary</option>
+        </select>
+      </label>
+
+      <label><input type="checkbox" id="invert" /> <span id="label-invert">Farben invertieren</span></label>
+      
+      <label id="label-fontsize">Schriftgröße:
+        <input type="range" id="fontsize" min="6" max="24" value="12" />
+      </label>
+
+      <label id="label-bgcolor">Hintergrundfarbe:
+        <input type="color" id="bgcolor" value="#1e1e1e" />
+      </label>
+    </div>
+
+    <button id="copy-btn">📋 ASCII kopieren</button>
+
+    <pre id="ascii-output"></pre>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
