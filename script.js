@@ -21,7 +21,8 @@ const i18n = {
     labelInvert: 'Farben invertieren',
     labelFontSize: 'Schriftgröße:',
     labelBgColor: 'Hintergrundfarbe:',
-    copyBtn: '📋 ASCII kopieren'
+    copyBtn: '📋 ASCII kopieren',
+    copied: '✅ Kopiert!'
   },
   en: {
     title: 'ASCII Art Generator',
@@ -31,7 +32,8 @@ const i18n = {
     labelInvert: 'Invert colors',
     labelFontSize: 'Font size:',
     labelBgColor: 'Background color:',
-    copyBtn: '📋 Copy ASCII'
+    copyBtn: '📋 Copy ASCII',
+    copied: '✅ Copied!'
   }
 };
 
@@ -86,7 +88,7 @@ dropArea.addEventListener('drop', e => {
 
 copyBtn.addEventListener('click', () => {
   navigator.clipboard.writeText(output.textContent).then(() => {
-    copyBtn.textContent = '✅ Kopiert!';
+    copyBtn.textContent = i18n[langSwitch.value].copied;
     setTimeout(() => copyBtn.textContent = i18n[langSwitch.value].copyBtn, 2000);
   });
 });
